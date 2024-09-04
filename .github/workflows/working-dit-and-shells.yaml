@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Display Working Directory & List Files
-              run:
+              run: |
                 pwd
                 ls -a
                 echo $GITHUB_SHA
@@ -15,7 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Display Working Directory & List Files
-              run:
+              run: |
                 pwd
                 ls -a
                 echo $GITHUB_SHA
