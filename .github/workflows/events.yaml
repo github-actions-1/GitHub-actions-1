@@ -3,9 +3,12 @@ on: [push, pull_request, issues]
 
 jobs:
   checkout-test:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo $GITHUB_SHA
-          echo $GITHUB_REF
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Display GitHub Context
+        run: |
+          echo "Commit SHA: $GITHUB_SHA"
+          echo "Reference: $GITHUB_REF"
