@@ -1,8 +1,25 @@
 name: Repository events
 on:
   push:
+    branches: 
+      - main
+      - "feature/*" #matches any branches that come after 'feature/' ex. feature/first or feature/second but not feature/first/and neither feature/second/and
+      - "feature/**" #matches any brances that come after 'feature/' ex. feature/first, feature/first/and, feature/second/and
+    # branches-ignore:
+    #   - develop #only one of the two keys work, either branches or branches-ignore
+      - "!feature/third" #this helps us include to exclude the 'feature/third' branch in the workflow. Important to put excluded at the end, since the next line is going to override this code
+    tags:
+      - "v1.*" #matches v1.2, v1.2.3
+      - "!v1.1.1" #excludes with ! mark
+    paths:
+      - "**.js"
+      - "!app.js"
   pull_request:
     types: [opened, assigned, reopened, synchronize]
+    branches:
+      - main
+    paths:
+      - "**.js"
   issues:
     types: [opened]
 
