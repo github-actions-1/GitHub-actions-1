@@ -8,4 +8,4 @@ jobs:
     steps:
       - run: |
           echo "Repository Dispatch"
-          echo ${{ github.event.client_playload.env }}
+          echo ${{ github.event.client_payload.env }}
