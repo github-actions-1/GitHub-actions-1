@@ -1,5 +1,5 @@
 name: Concurrency 1
-run-name: Concerrency 1 ({{ inputs.environments }})
+run-name: Concerrency 1 ({{ inputs.environment }})
 on:
   workflow_dispatch:
     inputs:
