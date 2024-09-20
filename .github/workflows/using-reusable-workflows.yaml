@@ -3,14 +3,14 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: "Input description"
+        description: 'Input description'
         type: string
-        default: "Ali"
+        default: 'Kurman'
         required: false
 
 jobs:
   calling-a-reusable-wf:
-    uses: github-actions-1/GitHub-actions-1/workflows/.github/workflows/reusable.yaml@main
+    uses: GitHub-actions-1/workflows/.github/workflows/reusable.yaml@main
     with:
       name: ${{ inputs.name }}
     secrets:
