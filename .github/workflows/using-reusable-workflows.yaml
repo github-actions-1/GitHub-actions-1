@@ -10,7 +10,7 @@ on:
 
 jobs:
   calling-a-reusable-wf:
-    uses: GitHub-actions-1/workflows/.github/workflows/reusable.yaml@main
+    uses: GitHub-actions-1/workflows/.github/workflows/reusable.yaml
     with:
       name: ${{ inputs.name }}
     secrets:
