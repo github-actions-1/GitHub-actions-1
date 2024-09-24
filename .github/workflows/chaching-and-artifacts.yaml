@@ -1,0 +1,16 @@
+name: Caching and Artifacts
+on : [workflow_dispatch]
+jobs:
+  use-axios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Depencies
+        run: npm install
+      - name: Use Axios
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const axios = required('axios')
+            const res = await axios('https://icanhazdadjokes.com/', { headers: { Accept: 'text/plain' } })
+            console.log(res.data)
